@@ -9,25 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fuild">
-        <nav class="navbar navbar-dark navbar-expand-md" style="background-color: rgb(129, 187, 206);">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">查網路</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar1">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item active"><a class="nav-link" href="/">主頁</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="/ip">使用IP查詢</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="/room">使用房號查詢</a></li>
-                    </ul>
-                </div>
-            </div>
+    {% include 'navbar.html' %}
 
-        </nav>
-
-    </div>
     <div class="container">
         <form action="" method="post">
             <div class="form-group">

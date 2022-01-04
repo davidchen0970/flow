@@ -11,58 +11,11 @@
 </head>
 <!-- https://ylw1125.pixnet.net/blog/post/42616802-%E5%B0%87table%E7%BD%AE%E4%B8%AD%E7%9A%84css%E8%AA%9E%E6%B3%95 文字致中 -->
 
-
-<!-- 
 <body>
-    <p style="text-align: center;">{{room}} 的流量</p>
-    <table class="table table-bordered" style="margin-left:auto; margin-right:auto;">
-        <tr>
-            <th>room</th>
-            <th> ip </th>
-            <th>flow</th>
-            <th>date</th>
-
-        </tr>
-        {% for i in u %}
-        <tr>
-            <td>{{ i[0] }}</td>
-            <td>{{ i[1] }}</td>
-            <td>{{ i[2] }}</td>
-            <td>{{ i[3] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-
-</html>
- -->
-
-<body>
-    <div class="container-fuild">
-        <div class="container-fuild">
-            <nav class="navbar navbar-dark navbar-expand-md" style="background-color: rgb(129, 187, 206);">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">查網路</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar1">
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">主頁</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="/ip">使用IP查詢</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="/room">使用房號查詢</a></li>
-                        </ul>
-                    </div>
-                </div>
     
-            </nav>
-    
-        </div>
+    {% include 'navbar.html' %}
 
-
-    </div>
     <div class="container height: 60%;">
-        <!-- <p style="text-align: center; font-size: 30px;">蘭潭宿舍 {{ room }} 房的流量</p> -->
         <p style="text-align: center; font-size: 30px;">蘭潭宿舍 {{ u[0][0] }} 房的流量</p>
         <div class="row">
             <table class="table table-bordered" style="margin-left:auto; margin-right:auto;text-align: center; ">

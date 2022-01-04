@@ -53,8 +53,13 @@ def room_result():
             u = cur.fetchall()
             conn.close()
             return render_template('ip_result.html', u=u, ip=request.form.get('room'))
+            # https://chilunhuang.github.io/posts/39347/ except handling
         except Exception as e:
             return render_template('error.html')
+
+@app.route('/navbar')
+def navbar():
+    return render_template('navbar.html')
 
 if __name__ == '__main__':
     port = int(environ.get('PORT', 5000))

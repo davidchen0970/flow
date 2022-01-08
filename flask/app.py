@@ -36,6 +36,7 @@ def ip_result():
             return render_template('ip_result.html', u=u, ip=request.form.get('ip'))
         except Exception as e:
             return render_template('error.html')
+
 @app.route('/room',methods=['GET'])
 def room_query():
     return render_template('room_query.html')
@@ -60,6 +61,15 @@ def room_result():
 @app.route('/navbar')
 def navbar():
     return render_template('navbar.html')
+
+@app.route('/feedback',methods=['GET'])
+def feedback():
+    return render_template('feedback.html')
+
+@app.route('/feedback',methods=['POST'])
+def feedback_result():
+    return render_template('feedback_result.html')
+
 
 if __name__ == '__main__':
     port = int(environ.get('PORT', 5000))

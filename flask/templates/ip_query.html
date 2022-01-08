@@ -11,14 +11,15 @@
 </head>
 
 <body>
-    {% include 'navbar.html' %}
 
+    {% include 'navbar.html' %}
     <div class="container">
+
         <form action="" method="post">
             <div class="form-group">
                 <!-- https://getbootstrap.com/docs/4.3/components/forms/ -->
                 <label for="exampleInputPassword1">輸入IP位置(ex:10.10.66.30):</label>
-                <input type="text" class="form-control" id="" name="ip" placeholder="10.10.66.30">
+                <input type="text" class="form-control" id="" name="ip" placeholder="10.10.66.30" required>
                 <button type="submit" class="btn btn-primary">Submit</button>
 
             </div>

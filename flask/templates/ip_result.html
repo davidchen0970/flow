@@ -12,39 +12,40 @@
 <!-- https://ylw1125.pixnet.net/blog/post/42616802-%E5%B0%87table%E7%BD%AE%E4%B8%AD%E7%9A%84css%E8%AA%9E%E6%B3%95 文字致中 -->
 
 <body>
-    
     {% include 'navbar.html' %}
+    <div class="container">
 
-    <div class="container height: 60%;">
-        <p style="text-align: center; font-size: 30px;">蘭潭宿舍 {{ u[0][0] }} 房的流量</p>
-        <div class="row">
-            <table class="table table-bordered" style="margin-left:auto; margin-right:auto;text-align: center; ">
-                <tr>
-                    <th>index</th>
-                    <th>room</th>
-                    <th> ip </th>
-                    <th>flow</th>
-                    <th>date</th>
+        <div class="container height: 60%;">
+            <p style="text-align: center; font-size: 30px;">蘭潭宿舍 {{ u[0][0] }} 房的流量</p>
+            <div class="row">
+                <table class="table table-bordered" style="margin-left:auto; margin-right:auto;text-align: center; ">
+                    <tr>
+                        <th>index</th>
+                        <th>room</th>
+                        <th> ip </th>
+                        <th>flow</th>
+                        <th>date</th>
 
-                </tr>
-                <!-- https://stackoverflow.com/questions/45699660/jinja2-reverse-a-list 迴圈反轉 -->
-                <!-- https://stackoverflow.com/questions/48079216/add-limit-for-list-in-for-loop-django-template 限制筆數 -->
-                <!-- https://stackoverflow.com/questions/12145434/how-to-output-loop-counter-in-python-jinja-template loop迴圈index -->
-                {% for i in u|reverse %}
-                {% if loop.index <= 73%} <tr>
-                    <td>{{loop.index}}</td>
-                    <td>{{ i[0] }}</td>
-                    <td>{{ i[1] }}</td>
-                    <td>{{ i[2] }}</td>
-                    <td>{{ i[3] }}</td>
                     </tr>
-                    {% endif %}
-                    {% endfor %}
-            </table>
-        </div>
-        <div class="row">
-            <div>
-                <p style="text-align: center; "> date格式:(西元年/月/日/時) , 僅顯示前73筆</p>
+                    <!-- https://stackoverflow.com/questions/45699660/jinja2-reverse-a-list 迴圈反轉 -->
+                    <!-- https://stackoverflow.com/questions/48079216/add-limit-for-list-in-for-loop-django-template 限制筆數 -->
+                    <!-- https://stackoverflow.com/questions/12145434/how-to-output-loop-counter-in-python-jinja-template loop迴圈index -->
+                    {% for i in u|reverse %}
+                    {% if loop.index <= 73%} <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{ i[0] }}</td>
+                        <td>{{ i[1] }}</td>
+                        <td>{{ i[2] }}</td>
+                        <td>{{ i[3] }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                </table>
+            </div>
+            <div class="row">
+                <div>
+                    <p style="text-align: center; "> date格式:(西元年/月/日/時) , 僅顯示前73筆</p>
+                </div>
             </div>
         </div>
     </div>

@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+
 <body>
     {% include 'navbar.html' %}
-
-    hi
+    <div class="container">
+        <p></p>
+        <div class="row" id="success" style="display: none;">
+            表單已提交
+        </div>
+        <div class="row" id="error" style="display: none;">
+            <p>表單提交時發生錯誤 請按上一頁返回填寫 </p> 
+        </div>
+    </div>
+    <script>
+        if ("{{result}}".toString() == "error") {
+            document.getElementById("success").setAttribute("style", "display:none");
+            document.getElementById("error").setAttribute("style", "display");
+        } else {
+            document.getElementById("error").setAttribute("style", "display:none");
+            document.getElementById("success").setAttribute("style", "display");
+        }
+    </script>
+    <!-- http://chienching-blog.logdown.com/posts/1178299-flask-using-the-correct-path-to-the-js flask javascript 使用方法 -->
 </body>
+
 </html>

@@ -16,22 +16,30 @@
 			<div class="mb-3 row">
 				<label for="feedback_name" class="col-sm-2 col-form-label">姓名</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="feedback_name" placeholder="ex: 劉德華" required>
+					<input type="text" class="form-control" id="feedback_name" name="feedback_name" placeholder="ex: 劉德華" required>
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label for="feedback_phone" class="col-sm-2 col-form-label">電話 </label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="feedback_phone" placeholder="ex: 0912345678" required>
+					<input type="text" class="form-control" id="feedback_phone" name="feedback_phone" placeholder="ex: 0912345678" required>
 				</div>
 			</div>
 			<div class="mb-3 row">
-				<label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label">回報原因</label>
+				<label for="feedback_room" class="col-sm-2 col-form-label">房號 </label>
 				<div class="col-sm-10">
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="10" required></textarea>
+					<input type="text" class="form-control" id="feedback_room" name="feedback_room" placeholder="ex: 6401A" required>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-secondary btn-lg">提交</button>
+			<div class="mb-3 row">
+				<label for="feedback_text" class="col-sm-2 col-form-label">回報原因</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" id="feedback_text" name="feedback_text" rows="10" placeholder="ex: 我的網路壞掉了嗚嗚嗚" required></textarea>
+				</div>
+			</div>
+			<div class="d-grid gap-2">
+				<button type="submit" class="btn btn-secondary btn-lg">提交</button>
+			</div>
 		</form>
 	</div>
 </body>

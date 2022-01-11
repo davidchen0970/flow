@@ -69,6 +69,11 @@ def navbar():
     return render_template('navbar.html')
 
 
+@app.route('/navbar_bottom')
+def navbar_bottom():
+    return render_template('navbar_bottom.html')
+
+
 @app.route('/feedback', methods=['GET'])
 def feedback():
     return render_template('feedback.html')
@@ -94,19 +99,27 @@ def feedback_result():
             conn.close()
         except Exception as e:
             return render_template('feedback_result.html', result="error")
-    return render_template('feedback_result.html', result="success")
+    return render_template('feedback_result.html',
+                           result="success",
+                           feedback_name=feedback_name,
+                           feedback_text=feedback_text,
+                           feedback_phone=feedback_phone,
+                           feedback_room=feedback_room)
 
 
 @app.route('/feedback/query', methods=['GET'])
 def query_feedback():
-    conn = pymysql.connect(host='127.0.0.1', user='root',
-                           password='1234', port=3306, db='first')
-    cur = conn.cursor()
-    sql = "SELECT feedback_name,feedback_text,room from new_table ;"
-    cur.execute(sql)
-    u = cur.fetchall()
-    conn.close()
-    return render_template('feedback_query.html', u=u)
+    try:
+        conn = pymysql.connect(host='127.0.0.1', user='root',
+                               password='1234', port=3306, db='first')
+        cur = conn.cursor()
+        sql = "SELECT feedback_name,feedback_text,room from new_table ;"
+        cur.execute(sql)
+        u = cur.fetchall()
+        conn.close()
+        return render_template('feedback_query.html', u=u)
+    except Exception as e:
+        return render_template('error.html')
 
 
 if __name__ == '__main__':

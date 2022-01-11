@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>query_page</title>
 </head>
 <!-- https://ylw1125.pixnet.net/blog/post/42616802-%E5%B0%87table%E7%BD%AE%E4%B8%AD%E7%9A%84css%E8%AA%9E%E6%B3%95 文字致中 -->
 
 <body>
     {% include 'navbar.html' %}
-    <div class="container">
+    <main class="container-fuild shadow-lg p-3 mb-5 bg-body rounded" style="width: 95%; margin: auto;">
 
         <div class="container height: 60%;">
             <p style="text-align: center; font-size: 30px;">蘭潭宿舍 {{ u[0][0] }} 房的流量</p>
@@ -48,7 +46,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+    {% include 'navbar_bottom.html' %}
+
 </body>
 
 </html>

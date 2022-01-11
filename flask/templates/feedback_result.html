@@ -11,15 +11,33 @@
 
 <body>
     {% include 'navbar.html' %}
-    <div class="container">
+    <main class="container">
         <p></p>
         <div class="row" id="success" style="display: none;">
-            表單已提交
+           <p>表單已提交</p>
+            <p>您輸入的內容(手機及姓名只提供目前個人查看):</p>
+            <p></p>
+            <table class="table table-bordered" style="margin-left:auto; margin-right:auto;text-align: center; ">
+                <tr>
+                    <th>姓名</th>
+                    <th>手機</th>
+                    <th>房號</th>
+                    <th>內容</th>
+
+                </tr>
+                <tr>
+                    <td class="col-md-1">{{feedback_name}}</td>
+                    <td class="col-md-2">{{feedback_phone}}</td>
+                    <td class="col-md-1">{{feedback_room}}</td>
+                    <td>{{feedback_text}}</td>
+                </tr>
+            </table>
+            <a href="/feedback/query">到所有回報結果</a>
         </div>
         <div class="row" id="error" style="display: none;">
-            <p>表單提交時發生錯誤 請按上一頁返回填寫 </p> 
+            <p>表單提交時發生錯誤 請按上一頁返回填寫 </p>
         </div>
-    </div>
+    </main>
     <script>
         if ("{{result}}".toString() == "error") {
             document.getElementById("success").setAttribute("style", "display:none");
@@ -30,6 +48,8 @@
         }
     </script>
     <!-- http://chienching-blog.logdown.com/posts/1178299-flask-using-the-correct-path-to-the-js flask javascript 使用方法 -->
+    {% include 'navbar_bottom.html' %}
+
 </body>
 
 </html>

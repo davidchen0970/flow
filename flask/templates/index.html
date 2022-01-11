@@ -5,38 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <title>index</title>
 </head>
 
-<body>
+<body style="background-color: rgb(125, 115, 163);">
 
     {% include 'navbar.html' %}
-    <div class="container">
 
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <p></p>
-            <button type="button" class="btn btn-primary btn-lg">
-                <a href="/ip" style="text-decoration:none; color: #FFF;">使用IP查詢</a>
-            </button>
-            <button type="button" class="btn btn-secondary btn-lg">
-                <a href="/room" style="text-decoration:none; color: #FFF;">使用房號查詢</a>
-            </button>
-            <button type="button" class="btn btn-success btn-lg">
-                <a href="/feedback" style="text-decoration:none; color: #FFF;">問題回報</a>
-            </button>
+    <main class="container">
+
+        <div class="d-grid gap-2 col-12 mx-auto" style="height: 600px;">
+            <div class="row gx-5">
+                <button type="button" class="col-lg-4 col-10 btn btn-primary btn-lg" style="margin-left: auto; margin-right: auto;">
+                    <a href="/ip" style="text-decoration:none; color: #FFF; font-size: 45px;">使用IP查詢</a>
+                </button>
+                <button type="button" class="col-lg-4 col-10 btn btn-secondary btn-lg" style="margin-left: auto; margin-right: auto;">
+                    <a href="/room" style="text-decoration:none; color: #FFF;font-size: 45px;">使用房號查詢</a>
+                </button>
+                <button type="button" class="col-lg-4 col-10 btn btn-success" style="margin-left: auto; margin-right: auto;">
+                    <a href="/feedback" style="text-decoration:none; color: #FFF;font-size: 45px;">問題回報</a>
+                </button>
+            </div>
+
+
+
             <div class="d-grid gap-2 d-md-block" style="margin-left: auto; margin-right: auto;">
-                <button class="btn btn-warning btn-lg " type="button">
+                <button class="btn btn-secondary btn-lg " type="button">
                     <a href="/feedback" style="text-decoration:none; color: #FFF;">問題回報紀錄</a>
                 </button>
-                <button class="btn btn-warning btn-lg " type="button">
+                <button class="btn btn-secondary btn-lg " type="button">
                     <a href="/feedback/query" style="text-decoration:none; color: #FFF;">問題回報查詢</a>
                 </button>
             </div>
         </div>
-    </div>
+    </main>
+    {% include 'navbar_bottom.html' %}
+
 </body>
 
 </html>

@@ -153,7 +153,7 @@ print(id)
 time.sleep(1)
 while(True):
     _ = os.system('cls')
-    if(now_minute() == "37"):
+    if(now_minute() == "57"):
         print("do crawler")
         crawler()
 

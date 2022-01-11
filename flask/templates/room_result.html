@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>query_page</title>
 </head>
 
 <body>
     {% include 'navbar.html' %}
 
-    <div class="container height: 60%;">
+    <main class="container height: 60%;">
         <p style="text-align: center; font-size: 30px;">蘭潭宿舍 {{ room }} 房的流量</p>
         <!--  <p style="text-align: center; font-size: 30px;">蘭潭宿舍 {{ u[0][0] }} 房的流量</p> -->
         <div class="row">
@@ -46,7 +44,10 @@
                 <p style="text-align: center; "> date格式:(西元年/月/日/時) , 僅顯示前73筆</p>
             </div>
         </div>
-    </div>
+    </main>
+
+    {% include 'navbar_bottom.html' %}
+
 </body>
 
 </html>

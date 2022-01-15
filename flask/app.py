@@ -3,7 +3,8 @@ from os import *
 from flask_sqlalchemy import *
 from pymysql import *
 import pymysql
-
+import mysql.connector
+from mysql.connector import errorcode
 
 db = SQLAlchemy()
 app = Flask(__name__)
@@ -27,8 +28,16 @@ def ip_query():
 def ip_result():
     if request.method == 'POST':
         try:
-            conn = pymysql.connect(host='127.0.0.1', user='root',
-                                   password='1234', port=3306, db='first')
+            config = {
+
+                'host': 'david0970.mysql.database.azure.com',
+                'user': 'david0970',
+                'password': 'Apple1234',
+                'database': 'first',
+                'client_flags': [mysql.connector.ClientFlag.SSL],
+                'ssl_ca': 'DigiCertGlobalRootCA.crt.pem'
+            }
+            conn = mysql.connector.connect(**config)
             cur = conn.cursor()
             sql = "SELECT room,ip,flow,date from test_crawler where ip='" + \
                 str(request.form.get('ip')) + "';"
@@ -49,8 +58,16 @@ def room_query():
 def room_result():
     if request.method == 'POST':
         try:
-            conn = pymysql.connect(host='127.0.0.1', user='root',
-                                   password='1234', port=3306, db='first')
+            config = {
+
+                'host': 'david0970.mysql.database.azure.com',
+                'user': 'david0970',
+                'password': 'Apple1234',
+                'database': 'first',
+                'client_flags': [mysql.connector.ClientFlag.SSL],
+                'ssl_ca': 'DigiCertGlobalRootCA.crt.pem'
+            }
+            conn = mysql.connector.connect(**config)
             cur = conn.cursor()
             sql = "SELECT room,ip,flow,date from test_crawler where room='" + \
                 str(request.form.get('room')) + "';"
@@ -83,8 +100,16 @@ def feedback():
 def feedback_result():
     if request.method == 'POST':
         try:
-            conn = pymysql.connect(host='127.0.0.1', user='root',
-                                   password='1234', port=3306, db='first', autocommit=True)
+            config = {
+
+                'host': 'david0970.mysql.database.azure.com',
+                'user': 'david0970',
+                'password': 'Apple1234',
+                'database': 'first',
+                'client_flags': [mysql.connector.ClientFlag.SSL],
+                'ssl_ca': 'DigiCertGlobalRootCA.crt.pem'
+            }
+            conn = mysql.connector.connect(**config)
             # https://blog.csdn.net/MATLAB_matlab/article/details/106197816
             feedback_name = str(request.form.get('feedback_name'))
             feedback_text = str(request.form.get('feedback_text'))
@@ -92,10 +117,11 @@ def feedback_result():
             feedback_room = str(request.form.get('feedback_room'))
 
             cur = conn.cursor()
-            sql = ("INSERT INTO `new_table` ( feedback_name,feedback_text,phonenumber ,room) VALUES ( \'" +
+            sql = ("INSERT INTO `feedback` ( feedback_name,feedback_text,phonenumber ,room) VALUES ( \'" +
                    feedback_name + "\',\'" + feedback_text + "\',\'" + feedback_phone+"\',\'" + feedback_room+"\');")
             print(sql)
             cur.execute(sql)
+            conn.commit()
             conn.close()
         except Exception as e:
             return render_template('feedback_result.html', result="error")
@@ -110,16 +136,29 @@ def feedback_result():
 @app.route('/feedback/query', methods=['GET'])
 def query_feedback():
     try:
-        conn = pymysql.connect(host='127.0.0.1', user='root',
-                               password='1234', port=3306, db='first')
+        config = {
+
+                'host': 'david0970.mysql.database.azure.com',
+                'user': 'david0970',
+                'password': 'Apple1234',
+                'database': 'first',
+                'client_flags': [mysql.connector.ClientFlag.SSL],
+                'ssl_ca': 'DigiCertGlobalRootCA.crt.pem'
+            }
+        conn = mysql.connector.connect(**config)
         cur = conn.cursor()
-        sql = "SELECT feedback_name,feedback_text,room from new_table ;"
+        sql = "SELECT feedback_name,feedback_text,room from feedback ;"
         cur.execute(sql)
         u = cur.fetchall()
         conn.close()
         return render_template('feedback_query.html', u=u)
     except Exception as e:
         return render_template('error.html')
+
+
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
 
 
 if __name__ == '__main__':

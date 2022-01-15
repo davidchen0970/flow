@@ -17,9 +17,9 @@ from mysql.connector import errorcode
 
 config = {
   'host':'david0970.mysql.database.azure.com',
-  'user':'david0970@david0970',
+  'user':'david0970',
   'password':'Apple1234',
-  'database':'david0970',
+  'database':'first',
   'client_flags': [mysql.connector.ClientFlag.SSL],
   'ssl_ca': '/DigiCertGlobalRootG2.crt.pem'
 }

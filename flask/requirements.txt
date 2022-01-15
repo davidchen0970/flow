@@ -1,0 +1,6 @@
+line-bot-sdk
+flask
+flask_sqlalchemy
+pymysql
+mysql
+mysql-connector-python

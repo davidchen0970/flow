@@ -51,6 +51,8 @@ def new_table(id, room, ip, flow, date):
     return id
 
 
+
+
 def now_second():
     do = datetime.datetime.now()
     return str(do.second)
@@ -153,7 +155,7 @@ print(id)
 time.sleep(1)
 while(True):
     _ = os.system('cls')
-    if(now_minute() == "57"):
+    if(now_minute() == "37"):
         print("do crawler")
         crawler()
 

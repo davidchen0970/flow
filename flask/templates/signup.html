@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊</title>
+</head>
+
+<body>
+    {%include 'navbar.html' %}
+    <div class="container">
+        <form action="" method="post">
+            <div class="form-group">
+                <div class="mb-3 row">
+                    <label for="room" class="col-sm-2 col-form-label">房號:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="room" placeholder="ex : 6401A" required>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="name" class="col-sm-2 col-form-label">姓名:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" placeholder="ex : 陳鼎諾" required>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="password" class="col-sm-2 col-form-label">密碼:</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="password" required>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html>

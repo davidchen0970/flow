@@ -15,10 +15,10 @@
         <p style="text-align: center; font-size: 30px;">問題回報紀錄</p>
         <table class="table table-bordered" style="margin-left:auto; margin-right:auto;text-align: center; ">
             <tr>
-                <th>index</th>
-                <th>姓名</th>
-                <th>房號</th>
-                <th>內容</th>
+                <th class="col-md-1">#</th>
+                <th class="col-md-1">姓名</th>
+                <th class="col-md-1">房號</th>
+                <th class="col-md-9">內容</th>
 
 
             </tr>
@@ -28,7 +28,7 @@
             {% for i in u|reverse %}
             {% if loop.index <= 5%}
             <tr>
-                <td >{{loop.index}}</td>
+                <td class="col-md-1" >{{loop.index}}</td>
                 <td class="col-md-1">{{ i[0][0] }}同學</td>
                 <td class="col-md-1">{{ i[2] }}</td>
                 <td class="col-md-9">{{ i[1] }}</td>

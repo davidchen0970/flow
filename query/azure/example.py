@@ -4,9 +4,9 @@ from mysql.connector import errorcode
 
 config = {
 
-    'host': 'david0970.mysql.database.azure.com',
-    'user': 'david0970',
-    'password': 'Apple1234',
+    'host': '********.mysql.database.azure.com',
+    'user': '********',
+    'password': '********',
     'database': 'first',
     'client_flags': [mysql.connector.ClientFlag.SSL],
     'ssl_ca': 'DigiCertGlobalRootCA.crt.pem'
